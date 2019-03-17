@@ -1,0 +1,8 @@
+<div *ngIf="!user">
+    <h2>Please login to see content</h2>
+</div>
+
+<div class="dashboard-content" *ngIf="user">
+    <app-users-list [users]="userList"></app-users-list>
+    <app-edit-users [userL]="userList" (addUser)="onAddUser($event)" (removeUser)="onRemoveUser($event)"></app-edit-users>
+</div>

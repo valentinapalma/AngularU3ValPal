@@ -1,0 +1,31 @@
+div {
+    width: 100%;
+    background-color:#6b5b95;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    text-align: center;
+    margin:0;
+    margin-bottom:20px;
+    padding:10px;
+}
+
+ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+li {
+    display:inline;
+    color:#d5d0e2;
+    padding:30px;
+    font-size:1.3em;
+    font-weight: bold;
+    font-family: Helvetica, Arial, sans-serif;
+    cursor: pointer;
+}
+
+li:active {
+    color:#fff;
+}
+

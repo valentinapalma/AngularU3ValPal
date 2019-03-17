@@ -1,0 +1,6 @@
+<!-- Innehåller inputfält och knappar för att lägga till/ta bort från listan -->
+<div>
+    <input [(ngModel)]="value" (keyup.enter)="onClickAdd()" type="text" class="form-control" placeholder="New User">
+    <button type="button" class="btn btn-success" (click)="onClickAdd()">Add</button>
+    <button type="button" class="btn btn-danger" (click)="onClickRemove()">Remove</button>
+</div>

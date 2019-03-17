@@ -1,0 +1,16 @@
+.dashboard-content {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+h2 {
+    text-transform: uppercase;
+	background: linear-gradient(to right, #b8b2c9 0%, #9986ca 50%, #27194d 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    font-size: 4vw;
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+    margin-top:40px;
+}
