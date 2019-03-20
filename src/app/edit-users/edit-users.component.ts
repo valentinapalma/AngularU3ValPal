@@ -5,8 +5,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './edit-users.component.html',
   styleUrls: ['./edit-users.component.css']
 })
+/*
+Ger möjligheten att lägga till och ta bort användare i listan
+*/
 export class EditUsersComponent implements OnInit {
-  value:string = '';
+  value:string;
 
   @Input() userL:string[];
   @Output() addUser = new EventEmitter<string>();
@@ -22,6 +25,7 @@ export class EditUsersComponent implements OnInit {
     if (this.value !== '') {
       this.addUser.emit(this.value);
       this.value = '';
+      console.log(this.value);
     }
   }
 

@@ -1,25 +1,46 @@
-<!-- Innehåller login formulär och logout knapp -->
-
+<!-- Login funktion och skapa ny användare knapp -->
 <div class="div" *ngIf="!user">
-  <form #userForm="ngForm">
+  <form (ngSubmit)="onSubmit()" #userForm="ngForm">
     <p style="font-size:1.2em">LOGIN</p>
-    <input id="name" name="name" class="form-control" 
-      required pattern="(?=.*\d)(?=.*[a-zA-Z]).{10,}" [(ngModel)]="value" #name="ngModel" 
-      placeholder="Username">
-          
-    <div *ngIf="name.invalid" class="alert alert-danger" style="font-size:12px; padding:2px;margin-bottom:0px;">
-      Username must contain a <strong>number</strong> <br>and be atleast <strong>10 characters</strong> long.
+
+    <label for="email">Email</label>
+    <input 
+    id="email" 
+    name="email" 
+    class="form-control" 
+    required email 
+    [(ngModel)]="model.email" 
+    #email="ngModel" 
+    placeholder="Email">
+
+    <div [hidden]="!email.touched || email.valid" class="alert alert-danger" style="font-size:12px; margin-top:-11px; padding:5px;">
+      <strong>Incorrect email</strong>
     </div>
 
-    
-      <button [routerLink]="['/dashboard']" type="submit" class="btn btn-primary" [disabled]="!userForm.form.valid" (click)="login()">Login</button>
-      <button type="submit" class="btn btn-primary">Create new user</button>
+    <label for="password">Password</label>
+    <input 
+    type="password"
+    id="password"
+    name="password"
+    minlength="10"
+    [(ngModel)]="model.password"
+    class="form-control" 
+    placeholder="Password" 
+    required
+    #password="ngModel">
+
+    <div [hidden]="!password.touched || password.valid" class="alert alert-danger" style="font-size:12px; margin-top:-11px; padding:5px;">
+      <strong>Incorrect password</strong>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="userForm.form.invalid">Login</button>
     
   </form>
 </div>
 
+<!-- Redan inloggad, logout knapp -->
 <div class="div out" *ngIf="user">
-  <p style="font-size:1em">
+  <p style="font-size:18px">
     You're already logged in with <br>
     <strong class="account">{{user}}</strong><br>
     Would you like to logout?

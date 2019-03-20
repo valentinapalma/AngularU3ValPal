@@ -1,7 +1,7 @@
 <div>
   <!-- Listan med alla användare, app-user-item-list innehåller varje listobjekt -->
   <ul class="list">
-    <app-user-list-item [routerLink]="['/user', user]" [ngClass]="isActive ? 'active' : 'disabled'" *ngFor="let user of users" [user]="user"></app-user-list-item>
+    <app-user-list-item [isActive]="isActive" *ngFor="let user of users" [user]="user"></app-user-list-item>
   </ul>
 
   <!-- Knapp för att ändra färg på listan -->

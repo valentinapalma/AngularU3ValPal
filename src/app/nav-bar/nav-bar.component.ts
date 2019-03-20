@@ -6,6 +6,9 @@ import { Router } from '@angular/router';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']
 })
+/*
+Navigationsbar med två klick alternativ - login & dashboard
+*/
 export class NavBarComponent implements OnInit {
 
   constructor(private router: Router) { }

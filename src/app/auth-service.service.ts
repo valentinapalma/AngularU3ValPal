@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AdminFull } from './admin-full.model';
+import { AdminLogin } from './admin-login.model';
+import { Router } from '@angular/router'
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +11,7 @@ Olika egenskaper och metoder som kan hämtas och användas i olika komponenter
 */
 export class AuthService {
   loggedUser:string;
+
   public admins:AdminFull[] = [{
     firstName:'John',
     lastName: 'Doe',
@@ -21,17 +24,22 @@ export class AuthService {
     password: '0987654321'
   }];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   // Kollar/hämtar vilken användare som är inloggad
   checkIfLoggedIn() {
     return localStorage.getItem('user');
   }
 
-  // Sparar användaren som loggar in
-  public login(user) {
-    localStorage.setItem('user', user);
-    this.loggedUser = user;
+  // Sparar användaren som loggar in och kollar så att användaren loggar in med redan existerande 
+  public login(user:AdminLogin) {
+    for (let i = 0; i < this.admins.length; i++) {
+      if (user.email === this.admins[i].email && user.password === this.admins[i].password) {
+        localStorage.setItem('user', user.email);
+        this.router.navigateByUrl('/dashboard');
+        break;
+      }
+    }
   }
 
   // Tar bort den sparade användaren

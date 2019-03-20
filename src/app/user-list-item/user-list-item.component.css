@@ -4,3 +4,15 @@
     font-size:100%;
     border-radius: 10px;
 }
+
+li a {
+    text-decoration: none;
+}
+
+.active {
+    color: #e100ff;
+}
+
+.disabled {
+    color: rgb(46, 46, 46);
+}

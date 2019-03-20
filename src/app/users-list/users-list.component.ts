@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./users-list.component.css']
 })
 /*
-Komponenten är en lista på användare. I klassen finns funktion för att toggla färger på listan
+Visar listan på alla användarna samt innehåller en toggle knapp som ändrar textfärg på listan
 */
 export class UsersListComponent implements OnInit {
   @Input() users:string[];
@@ -18,8 +18,8 @@ export class UsersListComponent implements OnInit {
 
   isActive: boolean = false;
 
-  // Skapar en funktion så att toggle funkar
-  toggle() {
+  // Toggle funktion som ändrar mellan true och false
+  toggle():void {
      this.isActive = !this.isActive;
   }
 

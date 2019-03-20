@@ -1,8 +1,21 @@
 <!-- Sida för att visa användaren som man tryckt på -->
 
 <h1 class="text">
-  <strong>User:</strong> {{userId}}
+  <strong>Name:</strong> {{user?.name}}
 </h1>
+<h1 class="text">
+  <strong>Username:</strong> {{user?.username}}
+</h1>
+<h1 class="text">
+  <strong>Street:</strong> {{user?.address.street}}
+</h1>
+<h1 class="text">
+  <strong>Zipcode:</strong> {{user?.address.zipcode}}
+</h1>
+<h1 class="text">
+  <strong>City:</strong> {{user?.address.city}}
+</h1>
+
 <div>
   <button type="button" class="btn btn-primary" [routerLink]="['/dashboard']">BACK</button>
 </div>

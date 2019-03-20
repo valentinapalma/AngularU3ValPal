@@ -6,10 +6,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./user-list-item.component.css']
 })
 /*
-
+Är till för att skapa en lista med användare
 */
 export class UserListItemComponent implements OnInit {
   @Input() user:string;
+  @Input() isActive:boolean;
 
   constructor() { }
 

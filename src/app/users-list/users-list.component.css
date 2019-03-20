@@ -24,15 +24,14 @@ div {
     background-color:#6b5b95 !important;
 }
 
-
 /* Varannan färg för toggle knappens */
-.active {
+/* .active {
     color: #e100ff;
 }
 
 .disabled {
     color: rgb(46, 46, 46);
-}
+} */
 
 .list {
     cursor: pointer;

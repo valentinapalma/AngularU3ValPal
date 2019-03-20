@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'user/:user', component: SingleUserComponent, canActivate: [AuthGuard] },
+  { path: 'user/:user', component: SingleUserComponent},
   { path: '**', component: PageNotFoundComponent },
 ];
 
